@@ -1,4 +1,7 @@
 from flask import Flask, request, jsonify
+logging.info(f"User {username} registered")   # in user-service
+logging.info(f"New booking for {data.get('user')}")   # in booking-service
+logging.info(f"Email sent to {user}")   # in notification-service
 
 app = Flask(__name__)
 users = {}
