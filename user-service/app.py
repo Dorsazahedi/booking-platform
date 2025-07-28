@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify
-logging.info(f"User {username} registered")   # in user-service
-logging.info(f"New booking for {data.get('user')}")   # in booking-service
-logging.info(f"Email sent to {user}")   # in notification-service
+import logging
+logging.basicConfig(
+    filename='log.txt',
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s:%(message)s'
+)
+
 
 app = Flask(__name__)
 users = {}
