@@ -1,5 +1,5 @@
 flask
 requests
-werkzeug
+werkzeug==2.3.7
 pytest
 requests-mock
