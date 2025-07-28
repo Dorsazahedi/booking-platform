@@ -16,7 +16,6 @@ bookings = {}
 def create_booking():
     data = request.get_json()
 
-    # ✅ Validate input: make sure "user" and "destination" are provided
     if not data.get("user") or not data.get("destination"):
         return jsonify({"error": "Missing user or destination"}), 400
 
@@ -27,8 +26,7 @@ def create_booking():
         "destination": data.get("destination"),
         "status": "confirmed pedram! You are Going!"
     }
-
-    # Notify via notification-service
+     logging.info(f"New booking for {data.get('user')}")
     try:
         requests.post("http://notification-service:5002/notify/email", json={
             "to": data.get("user"),
