@@ -14,7 +14,7 @@ def send_email():
     user = data.get("user")
     message = data.get("message")
     print("📬 Notification Service Log:")
-    print(f"   ✅ Email successfully sent to: {user}")
+    print(f"    Email successfully sent to: {user}")
     print(f"   📩 Message content: {message}\n")
     logging.info(f"Email sent to {user}")
     return jsonify({"status": "email sent", "user": user}), 200
