@@ -1,6 +1,13 @@
 from flask import Flask, request, jsonify
 import uuid
 import requests
+import logging
+logging.basicConfig(
+    filename='log.txt',
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s:%(message)s'
+)
+
 
 app = Flask(__name__)
 bookings = {}
