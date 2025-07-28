@@ -1,0 +1,31 @@
+name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install requirements
+      run: |
+        pip install -r user-service/requirements.txt
+        pip install -r booking-service/requirements.txt
+        pip install -r notification-service/requirements.txt
+
+    - name: Run User Service Tests
+      run: pytest user-service/user_test.py
+
+    - name: Run Booking Service Tests
+      run: pytest booking-service/booking-test.py
+
+    - name: Run Notification Service Tests
+      run: pytest notification-service/notification-test.py
