@@ -16,6 +16,7 @@ def send_email():
     print("📬 Notification Service Log:")
     print(f"   ✅ Email successfully sent to: {user}")
     print(f"   📩 Message content: {message}\n")
+    logging.info(f"Email sent to {user}")
     return jsonify({"status": "email sent", "user": user}), 200
 
 if __name__ == "__main__":
