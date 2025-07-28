@@ -20,6 +20,7 @@ def register():
     if username in users:
         return jsonify({"error": "User already exists"}), 409
     users[username] = password
+    logging.info(f"User {username} registered")
     return jsonify({"message": f"User {username} registered successfully! Congratulations!"}), 201
 
 @app.route("/login", methods=["POST"])
