@@ -2,4 +2,4 @@ flask
 requests
 werkzeug
 pytest
-requeste-mock
+requests-mock
